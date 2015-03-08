@@ -46,10 +46,6 @@
             android:parentActivityName=".MenuActivity">
         </activity>
         <activity
-            android:name=".AsignedActivity"
-            android:label="@string/title_activity_asigned" >
-        </activity>
-        <activity
             android:name=".ChooseActivity"
             android:label="Mandados cercanos a ti"
             android:parentActivityName=".MenuActivity">
