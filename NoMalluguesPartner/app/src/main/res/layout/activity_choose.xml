@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="dev.f.nomalluguespartner.ChooseActivity">
+    tools:context="dev.f.nomalluguespartner.ChooseActivity"
+    android:background="@drawable/bg_text">
 
 
     <ScrollView
@@ -13,7 +14,8 @@
         android:id="@+id/scrollView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp">
+        android:layout_marginTop="0dp"
+        android:background="@drawable/bg_text">
 
         <LinearLayout
             android:orientation="vertical"
@@ -54,16 +56,10 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/carne" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/buttonAbarrote"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/abarrotes" />
-
         </LinearLayout>
 
     </ScrollView>
+
+
 
 </RelativeLayout>
