@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MenuActivity extends ActionBarActivity
@@ -51,24 +52,37 @@ public class MenuActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch (position) {
+            case 1: Intent a = new Intent (MenuActivity.this,MapsActivity.class);
+            startActivity(a);
+            break;
+            case 2: Intent b = new Intent (MenuActivity.this,uno.class);
+                startActivity(b);
+                break;
+            case 5:
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+            break;
+        }
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                Intent a = new Intent(MenuActivity.this,MapsActivity.class);
-                startActivity(a);
-              //  mTitle = getString(R.string.title_section1);
+                //Intent a = new Intent(MenuActivity.this,MapsActivity.class);
+                //startActivity(a);
+              mTitle = getString(R.string.title_section1);
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
                 break;
         }
     }
@@ -147,6 +161,12 @@ public class MenuActivity extends ActionBarActivity
             ((MenuActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+    }
+
+    public void updateActivty(int position){
+
+
+
     }
 
 }
