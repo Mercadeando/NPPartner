@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.f.nomalluguespartner" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dev.f.nomalluguespartner">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,8 +17,9 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:label="No Mallugues"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -40,7 +42,8 @@
         </activity>
         <activity
             android:name=".Evaluation"
-            android:label="@string/title_activity_uno" >
+            android:label="Tu evaluación"
+            android:parentActivityName=".MenuActivity">
         </activity>
         <activity
             android:name=".AsignedActivity"
@@ -48,7 +51,8 @@
         </activity>
         <activity
             android:name=".ChooseActivity"
-            android:label="@string/title_activity_choose" >
+            android:label="Mandados cercanos a ti"
+            android:parentActivityName=".MenuActivity">
         </activity>
     </application>
 

@@ -3,6 +3,7 @@ package dev.f.nomalluguespartner;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,8 @@ public class ChooseActivity extends ActionBarActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         ImageButton btnOne = (ImageButton)findViewById(R.id.buttonFruta);
         btnOne.setOnClickListener(this);
