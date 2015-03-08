@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".uno"
+            android:name=".Evaluation"
             android:label="@string/title_activity_uno" >
         </activity>
         <activity

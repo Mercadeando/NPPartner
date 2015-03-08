@@ -6,24 +6,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ExpandableListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
-public class MenuActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
-
+public class MenuActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -47,6 +48,16 @@ public class MenuActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        // get the listview
+        expListView = (ExpandableListView) findViewById(R.id.lvExp);
+
+        // preparing list data
+        prepareListData();
+
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+
+        // setting list adapter
+        expListView.setAdapter(listAdapter);
     }
 
     @Override
@@ -56,10 +67,10 @@ public class MenuActivity extends ActionBarActivity
             case 1: Intent a = new Intent (MenuActivity.this,ChooseActivity.class);
             startActivity(a);
             break;
-            case 2: Intent b = new Intent (MenuActivity.this,uno.class);
+            case 2: Intent b = new Intent (MenuActivity.this,Evaluation.class);
                 startActivity(b);
                 break;
-            case 5:
+            case 3:
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
@@ -163,10 +174,40 @@ public class MenuActivity extends ActionBarActivity
         }
     }
 
-    public void updateActivty(int position){
+    private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
+
+        // Adding child data
+        listDataHeader.add("Pedido #234");
+        listDataHeader.add("Pedido #190");
+        listDataHeader.add("Pedido #188");
+
+        // Adding child data
+        List<String> p1 = new ArrayList<String>();
+        p1.add("Huevo -> 2Kg");
+        p1.add("Lechuga-> 2pza");
+        p1.add("Tomate -> 4 Kg");
+        p1.add("Platanos -> 1 Kg");
+        p1.add("A nombre de : Daniel Torres");
 
 
+        List<String> p2 = new ArrayList<String>();
+        p2.add("Zanahorias -> 1 kg");
+        p2.add("Bisteck -> 0.5 kg");
+        p2.add("Naranjas-> 3 kg");
+        p2.add("A nombre de: María Soto ");
 
+        List<String> comingSoon = new ArrayList<String>();
+        comingSoon.add("Jitomate -> 2 kg");
+        comingSoon.add("Frijol -> 3 kg");
+        comingSoon.add("Arroz -> 6kg");
+        comingSoon.add("Papaya -> 2kg");
+        comingSoon.add("A nombre de: Eugenia Valle");
+
+        listDataChild.put(listDataHeader.get(0), p1); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), p2);
+        listDataChild.put(listDataHeader.get(2), comingSoon);
     }
 
 }

@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">NoMalluguesPartner</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_maps">InicioMap</string>
+    <string name="title_activity_menu"></string>
     <string name="title_section1">Inicio</string>
     <string name="title_section2">Pedidos</string>
     <string name="title_section3">Caificacion</string>
