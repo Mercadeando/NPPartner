@@ -6,7 +6,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,9 +18,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-
+import android.widget.Toast;
 
 
 public class MenuActivity extends ActionBarActivity
@@ -41,7 +38,6 @@ public class MenuActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        setContentView(R.layout.fragment_encargos);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -51,40 +47,33 @@ public class MenuActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-
-        // Check that the activity is using the layout version with
-        // the fragment_container FrameLayout
-        if (findViewById(R.id.container) != null) {
-
-            // However, if we're being restored from a previous state,
-            // then we don't need to do anything and should return or else
-            // we could end up with overlapping fragments.
-            if (savedInstanceState != null) {
-                return;
-            }
-
-            // Create a new Fragment to be placed in the activity layout
-            PlaceholderFragment firstFragment = new PlaceholderFragment();
-
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            firstFragment.setArguments(getIntent().getExtras());
-
-            // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.encargos_fragment, firstFragment).commit();
-        }
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-
         switch (position) {
+            case 1: Intent a = new Intent (MenuActivity.this,ChooseActivity.class);
+            startActivity(a);
+            break;
+            case 2: Intent b = new Intent (MenuActivity.this,uno.class);
+                startActivity(b);
+                break;
+            case 5:
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+            break;
+        }
+    }
+
+    public void onSectionAttached(int number) {
+        switch (number) {
             case 1:
-                Intent a = new Intent(MenuActivity.this,MapsActivity.class);
-                startActivity(a);
-                //  mTitle = getString(R.string.title_section1);
+                //Intent a = new Intent(MenuActivity.this,MapsActivity.class);
+                //startActivity(a);
+              mTitle = getString(R.string.title_section1);
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
@@ -93,15 +82,9 @@ public class MenuActivity extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
             case 4:
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                        .commit();
+                mTitle = getString(R.string.title_section4);
+                break;
         }
-    }
-
-    public void onSectionAttached(int number) {
-
     }
 
     public void restoreActionBar() {
@@ -178,6 +161,12 @@ public class MenuActivity extends ActionBarActivity
             ((MenuActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+    }
+
+    public void updateActivty(int position){
+
+
+
     }
 
 }

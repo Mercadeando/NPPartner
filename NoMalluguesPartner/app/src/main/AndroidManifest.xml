@@ -38,6 +38,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".uno"
+            android:label="@string/title_activity_uno" >
+        </activity>
+        <activity
+            android:name=".AsignedActivity"
+            android:label="@string/title_activity_asigned" >
+        </activity>
+        <activity
+            android:name=".ChooseActivity"
+            android:label="@string/title_activity_choose" >
+        </activity>
     </application>
 
 </manifest>
