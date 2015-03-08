@@ -4,15 +4,16 @@
         <!-- Customize your theme here. -->
     </style>
 
-
-    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light">
+    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <color name="primary">#CDDC39</color>
-    <color name="primaryDark">#AFB42B</color>
-    <color name="accent">#3F51B5</color>
+    <color name="primaryDark">#0097A7</color>
+    <color name="primary">#00BAD4</color>
+    <color name="primaryLight">#B2EBF2</color>
+    <color name="accent">#FF7A00</color>
+    <color name="third">#f9f93d</color>
 
 </resources>

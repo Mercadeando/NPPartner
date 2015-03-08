@@ -5,9 +5,9 @@
     <string name="title_activity_maps">InicioMap</string>
     <string name="title_activity_menu"></string>
     <string name="title_section1">Inicio</string>
-    <string name="title_section2">Pedidos</string>
-    <string name="title_section3">Caificacion</string>
-    <string name="title_section4">Actividad</string>
+    <string name="title_section2">Pedidos cercanos</string>
+    <string name="title_section3">Tu Rating</string>
+    <string name="title_section4"></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
@@ -16,5 +16,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_asigned">AsignedActivity</string>
     <string name="title_activity_choose">ChooseActivity</string>
+    <string name="title_activity_take">TakeActivity</string>
+    <string name="title_activity_done">DoneActivity</string>
 
 </resources>

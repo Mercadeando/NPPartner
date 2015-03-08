@@ -24,7 +24,7 @@
             android:layout_alignParentTop="true"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:paddingTop="30dp">
+            android:paddingTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:singleLine="true"
-                android:textColor="#3F51B5"
+                android:textColor="@color/third"
                 android:textStyle="bold"
                 android:textSize="25dp" />
 
@@ -46,9 +46,9 @@
                 android:layout_below="@+id/total"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:textSize="70dp"
+                android:textSize="80dp"
                 android:textStyle="bold"
-                android:textColor="#3F51B5" />
+                android:textColor="@color/third" />
 
             <RatingBar
                 android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
                 android:id="@+id/ratingBar"
                 android:numStars="5"
                 android:rating="4.7"
-                android:progressTint="#3F51B5"
+                android:progressTint="@color/accent"
                 android:layout_above="@+id/quickContactBadge"
                 android:layout_centerHorizontal="true" />
 
@@ -70,7 +70,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
-                android:textColor="#AFB42B"
+                android:textColor="@color/accent"
                 android:layout_marginBottom="20dp"/>
 
             <HorizontalScrollView
@@ -103,7 +103,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Luis Pérez comenta:"
+                            android:text="María I. López F."
                             android:id="@+id/textView3"
                             android:layout_alignTop="@+id/quickContactBadge"
                             android:layout_centerHorizontal="true" />
@@ -111,7 +111,7 @@
                         <TextView
                             android:layout_width="116dp"
                             android:layout_height="wrap_content"
-                            android:text="Todo muy  bien todo llego a tiempo"
+                            android:text="Mi mandado llegó a tiempo."
                             android:id="@+id/textView4"
                             android:layout_below="@+id/textView3"
                             android:layout_alignLeft="@+id/textView3"
@@ -136,7 +136,7 @@
                         <TextView
                             android:layout_width="122dp"
                             android:layout_height="wrap_content"
-                            android:text="Monica Torres comenta:"
+                            android:text="Juan Guillermo S."
                             android:id="@+id/textView5"
                             android:layout_alignTop="@+id/quickContactBadge2"
                             android:layout_alignLeft="@+id/textView4"
@@ -145,7 +145,7 @@
                         <TextView
                             android:layout_width="125dp"
                             android:layout_height="wrap_content"
-                            android:text="Me ayudo bastante, no me defraudo "
+                            android:text="Un poco fuera de tiempo pero la atención lo vale."
                             android:id="@+id/textView7"
                             android:layout_alignTop="@+id/textView6"
                             android:layout_toRightOf="@+id/textView6"
@@ -170,7 +170,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Diego Rodríguez comenta:"
+                            android:text="Ivana Sharasklova"
                             android:id="@+id/textView8"
                             android:layout_alignTop="@+id/quickContactBadge3"
                             android:layout_toRightOf="@+id/textView6"
@@ -179,7 +179,7 @@
                         <TextView
                             android:layout_width="125dp"
                             android:layout_height="wrap_content"
-                            android:text="Me ayudo bastante, no me defraudo "
+                            android:text="Los ingredientes tradicionales mexicanos me recuerdan mucho a mi tierra."
                             android:id="@+id/textView7"
                             android:layout_alignTop="@+id/textView6"
                             android:layout_toRightOf="@+id/textView6"

@@ -6,19 +6,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 
-public class ChooseActivity extends ActionBarActivity implements View.OnClickListener {
+public class TakeActivity extends ActionBarActivity implements View.OnClickListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose);
+        setContentView(R.layout.activity_take);
 
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        ImageButton btnOne = (ImageButton)findViewById(R.id.buttonFruta);
+        Button btnOne = (Button)findViewById(R.id.buttonMap);
+        btnOne.setOnClickListener(this);
+        Button btnTwo = (Button)findViewById(R.id.buttonTake);
         btnOne.setOnClickListener(this);
     }
 
@@ -26,7 +26,7 @@ public class ChooseActivity extends ActionBarActivity implements View.OnClickLis
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose, menu);
+        getMenuInflater().inflate(R.menu.menu_take, menu);
         return true;
     }
 
@@ -45,14 +45,20 @@ public class ChooseActivity extends ActionBarActivity implements View.OnClickLis
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClick(View viewClicked) {
-        int idView = viewClicked.getId();
+    @Override
+    public void onClick(View v) {
+        int idView = v.getId();
 
         switch (idView){
-            case R.id.buttonFruta:
-                Intent intent = new Intent(this, TakeActivity.class);
+            case R.id.buttonMap:
+                Intent intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.buttonTake:
+                Intent intent1 = new Intent(this, DoneActivity.class);
+                startActivity(intent1);
+                break;
         }
+
     }
 }

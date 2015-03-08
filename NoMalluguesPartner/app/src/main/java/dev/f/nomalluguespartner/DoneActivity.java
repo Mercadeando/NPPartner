@@ -1,32 +1,24 @@
 package dev.f.nomalluguespartner;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 
-public class ChooseActivity extends ActionBarActivity implements View.OnClickListener {
+public class DoneActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose);
-
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        ImageButton btnOne = (ImageButton)findViewById(R.id.buttonFruta);
-        btnOne.setOnClickListener(this);
+        setContentView(R.layout.activity_done);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose, menu);
+        getMenuInflater().inflate(R.menu.menu_done, menu);
         return true;
     }
 
@@ -43,16 +35,5 @@ public class ChooseActivity extends ActionBarActivity implements View.OnClickLis
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClick(View viewClicked) {
-        int idView = viewClicked.getId();
-
-        switch (idView){
-            case R.id.buttonFruta:
-                Intent intent = new Intent(this, TakeActivity.class);
-                startActivity(intent);
-                break;
-        }
     }
 }

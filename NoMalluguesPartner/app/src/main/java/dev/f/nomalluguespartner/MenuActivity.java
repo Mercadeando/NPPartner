@@ -180,31 +180,36 @@ public class MenuActivity extends ActionBarActivity implements NavigationDrawerF
         listDataChild = new HashMap<String, List<String>>();
 
         // Adding child data
-        listDataHeader.add("Pedido #234");
-        listDataHeader.add("Pedido #190");
-        listDataHeader.add("Pedido #188");
+        listDataHeader.add("Vegetariano.  Hoy 14:30");
+        listDataHeader.add("Alimentos.  Hoy 14:40");
+        listDataHeader.add("Ferretería.  Mañana 8:00");
 
         // Adding child data
         List<String> p1 = new ArrayList<String>();
-        p1.add("Huevo -> 2Kg");
-        p1.add("Lechuga-> 2pza");
-        p1.add("Tomate -> 4 Kg");
-        p1.add("Platanos -> 1 Kg");
-        p1.add("A nombre de : Daniel Torres");
+        p1.add("12 Huevos");
+        p1.add("1 Lechuga");
+        p1.add("1 kg Tomate");
+        p1.add("0.5 Kg Soyas");
+        p1.add("  ");
+        p1.add("$120.50");
+        p1.add("Daniel Torres");
 
 
         List<String> p2 = new ArrayList<String>();
-        p2.add("Zanahorias -> 1 kg");
-        p2.add("Bisteck -> 0.5 kg");
-        p2.add("Naranjas-> 3 kg");
-        p2.add("A nombre de: María Soto ");
+        p2.add("3 kg Arroz");
+        p2.add("5 kg Carne");
+        p2.add("1 kg Tomate");
+        p2.add("0.5 Kg Queso");
+        p2.add("5 kg Tortilla");
+        p2.add("  ");
+        p2.add("$904.50");
+        p2.add("Diego Díguedez");
 
         List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("Jitomate -> 2 kg");
-        comingSoon.add("Frijol -> 3 kg");
-        comingSoon.add("Arroz -> 6kg");
-        comingSoon.add("Papaya -> 2kg");
-        comingSoon.add("A nombre de: Eugenia Valle");
+        comingSoon.add("1 metro Alambre galvanizado");
+        comingSoon.add("  ");
+        comingSoon.add("$40.00");
+        comingSoon.add("Amahiraní Gutierrez");
 
         listDataChild.put(listDataHeader.get(0), p1); // Header, Child data
         listDataChild.put(listDataHeader.get(1), p2);

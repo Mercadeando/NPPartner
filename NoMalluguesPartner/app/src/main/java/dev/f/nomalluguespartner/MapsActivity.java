@@ -10,7 +10,9 @@ import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.math.BigDecimal;
@@ -189,6 +191,14 @@ public class MapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(new LatLng(19.44265,-99.12929)).title("TEPITO ROPA Y TELAS (granaditas)"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(19.447124,-99.127332)).title("TEPITO VARIOS"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(19.446418,-99.127453)).title("TEPITO ZONA"));
+
+        Marker cliente = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(19.442304, -99.181270))
+                .title("CLIENTE")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                .snippet("Cuenta: $132")
+                );
+
 
         Location locationMarket = new Location ("GRANADA");
         locationMarket.setLatitude(19.44182);

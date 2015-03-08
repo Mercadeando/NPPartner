@@ -3,8 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:minHeight="40dp"
     android:padding="8dp"
-    android:background="#000000">
+    android:layout_marginTop="15dp"
+    android:background="@color/primaryDark">
 
 
     <TextView
@@ -12,7 +14,16 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textSize="17dp"
-        android:textColor="#f9f93d" />
+        android:textSize="25dp"
+        android:textStyle="normal"
+        android:textColor="@color/third"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/detalle" />
 
 </LinearLayout>
